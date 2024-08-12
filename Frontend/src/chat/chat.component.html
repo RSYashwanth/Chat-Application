@@ -1,0 +1,43 @@
+<div class="chat-window">
+    <div class="chats">
+        <div class = "chat-header">
+            <h1>Chats</h1>
+            <div class="add-button" >
+                +
+                <chat-chat-popup *ngIf = "isChatPopup" (isDisplay)="closePopup($event)"></chat-chat-popup>
+            </div>
+        </div>
+        <div class="chat" *ngFor="let chat of getChats()" (click)="switchChat(chat, $event)" (mouseenter) = "chat.isHovered = true" (mouseleave) = "chat.isHovered = false">
+            <div class="chat-content">
+                <div class="chat-name">{{ chat.name }} </div>
+                <div class="delete-chat" *ngIf = "chat.isHovered" (click) = "deleteChat(chat)">⨉</div> 
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="messages" *ngIf = "chatActive">
+        <h1 class = "message-header">{{this.chat}}</h1>
+        <div class="message-window" id= "msg-window">
+            <chat-message *ngFor="let message of this.messageHandlerService.messages;" user="{{message.user}}" color="{{message.color}}" [messages]="message.messages"></chat-message>
+        </div>
+        <div class="message-bar">
+            <input [(ngModel)] = "messageToSend" type="text" placeholder="Type a message here" (keyup.enter)="post()">
+            <!-- <button (click) = "post()">post</button> -->
+        </div>
+    </div>
+    <div class="users" *ngIf = "chatActive">
+        <h1 class = "user-header">Users<div class="search">●</div></h1>
+        <div class="user" *ngFor = "let user of getUsers()">
+            <div class="user-name">{{user}}</div>
+            <hr>
+        </div>
+        <div class="search-panel" *ngIf = "this.isSearchPanel">
+            <div class="search-header">
+                <h1>Search</h1>
+                <div class="search-close">⨉</div>
+            </div>
+            <input type="text" placeholder="Search prompt goes here" [(ngModel)] = "searchPrompt"  (keyup.enter)="search()">
+            <p class="search-result">{{searchContent}}</p>
+        </div>
+    </div>
+</div>

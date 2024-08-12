@@ -1,0 +1,10 @@
+<div class="add-chat-popup">
+    <div class="popup-content" id = "popup">
+        Users:
+        <input type="text" [(ngModel)] = "users" placeholder="eg: User1, User2, User3" id="popup" autocomplete="off">
+        Name:
+        <input type="text" [(ngModel)] = "name" placeholder="enter chat name here" id="popup" autocomplete="off">
+        <button class = "create-chat" id = "popup" (click) = "createChat()">Create Chat</button>
+    </div>
+</div>
+

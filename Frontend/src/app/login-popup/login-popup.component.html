@@ -1,0 +1,22 @@
+
+<div class="popup" (mousedown) = "handleClick($event)">
+    <div class="sign-up-container" *ngIf="!getLoginState()">
+        <button class="close-button">×</button>
+        <h3>Get started today! Create your account by filling out the details below. </h3>
+        <input [(ngModel)]='username' type="text" class="user-input" placeholder="Enter your username here.">
+        <input [(ngModel)]='email' type="text" class="user-input" placeholder="Enter your email here.">
+        <input type="password" class="user-input" placeholder="Enter your password here.">        
+        <input [(ngModel)]='password' type="password" class="user-input" placeholder="Re-enter your password here to confirm.">   
+        <button class="submit-button" (mousedown) = 'handleSubmit()'>Sign Up</button>
+        <p class = "switch-login" (mousedown) = "handleClick($event)">Already have an account? Login here.</p>
+    </div>
+
+    <div class="login-container" *ngIf="getLoginState()">
+        <button class="close-button">×</button>
+        <h3>Log into your account by filling out the details below. </h3>
+        <input [(ngModel)]='username' type="text" class="user-input" placeholder="Enter your username here.">
+        <input [(ngModel)]='password' type="password" class="user-input" placeholder="Enter your password here.">        
+        <button class="submit-button" (mousedown) = 'handleSubmit()'>Login</button>
+        <p class = "switch-sign-up" (mousedown) = "handleClick($event)">Don't have an account? Sign up here.</p>
+    </div>
+</div>

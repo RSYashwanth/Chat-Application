@@ -1,0 +1,23 @@
+<div class="nav-bar">
+    <nav>
+      <div class="logo">TEXT</div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="/">Contact</a>
+        <a (click) = "handleClick($event)" class = "login-btn">Login</a>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="hero">
+    <div class="hero-left">
+      <h1>Communcation is the way</h1>
+      <p>Engage and interact with anyone, anywhere. This is random filler text I made up to see if my css works. Example text text text text more text.</p>
+      <button class="start-button" (click) = "handleClick($event)">Get Started!</button>
+    </div>
+    <div class="hero-right">
+      <img src="\assets\hero-image.svg" alt="Texting Image" class="hero-image" draggable="false">
+    </div>
+  </div>
+  
+  <app-login-popup *ngIf = "getDisplay()"></app-login-popup>

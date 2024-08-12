@@ -1,0 +1,10 @@
+<div class="msg" [style.--baseColor]="this.base"  [style.--hoverColor]="this.hover" >
+    <p class="user">{{user}}</p>
+    <div class="message" *ngFor="let obj of messageObjs" (mouseenter)="obj.hovered = true" (mouseleave)="obj.hovered = false; unclick(obj)">
+        <p id="msg">{{obj.message.message.trim()}}</p>
+        <chat-options-popup *ngIf = "obj.clicked" baseColor = "{{base}}" hoverColor="{{hover}}" [message]="obj.message"></chat-options-popup>
+        <div class="options" *ngIf = "obj.hovered" (click) = "optionsClicked(obj)">
+            •••
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build:
+      context: "./frontend"
+      dockerfile: "./Dockerfile"
+    ports:
+      - 80:80
+    networks:
+      - chat_network
+  backend:
+    build:
+      context: "./backend"
+      dockerfile: "./Dockerfile"
+    ports:
+      - 8081:8081
+    networks:
+      - chat_network
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - chat_network
+ 
+networks:
+  chat_network:

@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::selection {
+    background: var(--baseColor, green);
+    color: white;
+}
+
+.msg{
+    background-color: white;
+}
+
+.user{
+    font-weight: bold;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.message{
+    padding: 0 15px;
+    transition: 100ms;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message:hover{
+    background-color: var(--hoverColor, gray);
+}
+
+.message p{
+    padding: 3px 5px;
+    border-style: solid;
+    border-width: 0 0 0 5px;
+    border-color: var(--baseColor, black);
+    white-space: pre-wrap;
+}
+
+.options{
+    padding: 3px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--baseColor);
+    cursor: pointer;
+}
+
+.options:hover{
+    color: black;
+}
+
+chat-options-popup{
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    z-index: 10;
+}

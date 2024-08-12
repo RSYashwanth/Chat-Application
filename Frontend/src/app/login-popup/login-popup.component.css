@@ -1,0 +1,92 @@
+.popup{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;    
+    background-color: rgb(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.login-container, .sign-up-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 25%;
+    /* height: 60%; */
+    background-color: white;
+    border-radius: 10px;
+}
+
+.close-button{
+    height: 10%;
+    width: 10%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+    color: gray;
+    transition: 100ms;
+}
+
+.close-button:hover{
+    color: red;
+}
+
+h3{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 7vh 0;
+
+}
+
+.login-container input, .sign-up-container input{
+    border-color: gray;
+    height: 55px;
+    margin: 2px 0;
+    border-radius: 5px;
+    border-style: solid;
+    transition: 300ms;
+    padding-left: 20px;
+}
+
+.login-container input:hover, .sign-up-container input:hover{
+    border-color: rgb(0, 107, 189);
+}
+
+.submit-button{
+    border: none;
+    height: 60px;
+    margin: 2px 0 0 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: rgb(0, 107, 189);
+    color: white;
+    border-radius: 5px;
+    transition: 300ms;
+}
+
+.submit-button:hover{
+    background-color: rgb(0, 72, 149);
+}
+
+.submit-button:active{
+    background-color: rgb(0, 38, 128);
+}
+
+.login-container p, .sign-up-container p{
+    color:gray;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.login-container p:hover, .sign-up-container p:hover{
+    color:rgb(0, 107, 189);
+}

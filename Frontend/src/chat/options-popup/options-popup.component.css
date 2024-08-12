@@ -1,0 +1,21 @@
+.popup{
+    width: 100px;
+    /* height: 100px; */
+    background-color: white;
+    box-shadow: 0px 0px 16px gray;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.delete{
+    cursor: pointer;
+    padding: 5px 25px;
+    transition: 200ms;
+}
+
+.delete:hover{
+    background-color: var(--hoverColor, gray);
+    border-style: solid;
+    border-width: 0 0 5px 0;
+    border-color: var(--baseColor, black);
+}
