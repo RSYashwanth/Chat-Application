@@ -5,7 +5,7 @@ const { RetrievalQAChain } = require("langchain/chains");
 const { ChatOpenAI } = require("langchain/chat_models/openai");
 
 require("dotenv").config();
-console.log(process.env.API_KEY);
+
 const textSplitter = new RecursiveCharacterTextSplitter({
     chunkSize: 500,
     chunkOverlap: 0,
