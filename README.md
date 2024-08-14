@@ -12,39 +12,49 @@ A simple instant messaging application.
 
 ## Introduction
 
-This project is a concept of a simple instant messaging application that is integrated with the OpenAI API to analyze and query any chat log with natural language. This integration enables users to easily search through, summarize, query, and analyze their chat logs with other users using natural language with ease.
+This project is a concept of a simple instant messaging application that is built on the MEAN Stack and is integrated with the OpenAI API to analyze and query any chat log with natural language. This integration enables users to easily search through, summarize, query, and analyze their chat logs with other users using natural language with ease.
 
 ## Features
 
 - Responsive and intuitive modern user interface
-- 
+- Robust authentication system based on JWTs
+- Session handling
+- Ability to create and invite other users to different chat rooms
+- Switch instantly between chat rooms
+- View all users in a chat room
+- Realtime message delivery using WebSockets
+- Unique colors for each user in a chat room
+- Ability to delete messages and chat rooms
+- Chat logs from each room are embedded and stored in a vectorstore
+- Ability to query the chat using natural language using langchain and openai completion models with the vectorstore as context
 
 ## Setup
 
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/RSYashwanth/Ray-Tracer.git
-   cd Ray-Tracer
+   git clone https://github.com/RSYashwanth/Chat-Application.git
    ```
-2. Build a docker image:
+2. Run docker-compose
    ```sh
-   docker build -t <ImageName> .
+   docker-compose up
    ```
-3. Run docker
-   ```sh
-   docker run -p 80:80 <ImageName>
-   ```
-4. Open localhost on any browser of choice
+3. Open localhost on any browser of choice
 
 ## Usage
 
-1. Click the `Add Object` button to place a new sphere at origin
-2. Adjust object parameters such as position, size, color, roughness, emmissive color, and emmissive strength
-3. Customize and configure scene to preference (don't forget to add emmissive sources else the scene will appear pitch black)
-4. Use wasd keys and arrow keys to position and rotate the camera appropriately in view port mode
-5. Adjust samples count for the final output (higher sample counts lead to a better output but takes longer to render)
-6. Click the `Render` button and view the ray traced output (open console first for rendering progess)
+### Creating a user
+
+1. On the welcome page, click on the `Get Started` button
+2. Select the `sign up here` text at the bottom of the popup to create a profile
+3. Enter a username, email, password and password confirmation to sign up
+4. Repeat these steps with unique usernames to create multiple accounts
+
+### Creating a chat room
+
+1. On the home screen, click the `+` button besides the `Chat` tab
+2. In the popup, enter a list of space-seperated valid usernames to include all the users in the chat room
+3. Enter a name for the name of the chat
 
 ## Examples
 1. ![Ray tracer screenshot 1](images/a.png)

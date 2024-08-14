@@ -4,16 +4,18 @@ const { MemoryVectorStore } = require("langchain/vectorstores/memory");
 const { RetrievalQAChain } = require("langchain/chains");
 const { ChatOpenAI } = require("langchain/chat_models/openai");
 
+require("dotenv").config();
+console.log(process.env.API_KEY);
 const textSplitter = new RecursiveCharacterTextSplitter({
     chunkSize: 500,
     chunkOverlap: 0,
 });
 
 const embeddings = new OpenAIEmbeddings({
-    openAIApiKey: "[ENTER API KEY HERE]",
+    openAIApiKey: process.env.API_KEY,
 });
 const model = new ChatOpenAI({
-    openAIApiKey: "[ENTER API KEY HERE]",
+    openAIApiKey: process.env.API_KEY,
     modelName: "gpt-4o",
 });
 
