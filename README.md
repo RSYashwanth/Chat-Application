@@ -79,5 +79,5 @@ This project is a concept of a simple instant messaging application that is buil
 4. ![Chat App query chat screenshot 1](images/7.png)
 5. ![Chat App query chat screenshot 2](images/8.png)
 
-For more screenshots, look into /images
+For more screenshots, look into `/images`
    
